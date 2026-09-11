@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
@@ -7,122 +7,149 @@
 <title>Mardin Gece Şoförü</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    background: #080808;
-    color: #fff;
-    font-family: Arial, sans-serif;
+body{
+    margin:0;
+    background:#080808;
+    color:#fff;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 }
 
-.container {
-    width: 100%;
-    max-width: 480px;
-    margin: auto;
-    padding: 25px 18px 40px;
+.container{
+    width:100%;
+    max-width:500px;
+    margin:auto;
+    padding:20px;
 }
 
-.logo {
-    text-align: center;
-    padding: 45px 0 30px;
+.header{
+    text-align:center;
+    padding:55px 0 35px;
 }
 
-.logo h1 {
-    margin: 0;
-    color: #d8b35a;
-    font-size: 28px;
-    letter-spacing: 1px;
+.logo{
+    width:58px;
+    height:58px;
+    margin:0 auto 18px;
+    border-radius:18px;
+    background:linear-gradient(145deg,#efd477,#9b6c20);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#080808;
+    font-weight:900;
+    font-size:20px;
 }
 
-.logo p {
-    color: #999;
-    font-size: 13px;
-    margin-top: 10px;
+h1{
+    margin:0;
+    color:#dfbd61;
+    font-size:28px;
+    letter-spacing:1px;
 }
 
-.card {
-    background: #111;
-    border: 1px solid #292929;
-    border-radius: 20px;
-    padding: 22px;
-    box-shadow: 0 15px 45px rgba(0,0,0,.45);
+.header p{
+    color:#888;
+    font-size:13px;
+    margin-top:10px;
 }
 
-.card h2 {
-    text-align: center;
-    margin: 5px 0 25px;
+.card{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:22px;
+    padding:24px 20px;
+    box-shadow:0 18px 50px rgba(0,0,0,.45);
 }
 
-label {
-    display: block;
-    color: #aaa;
-    font-size: 13px;
-    margin-bottom: 7px;
+h2{
+    text-align:center;
+    margin:0 0 25px;
+    font-size:22px;
+}
+
+label{
+    display:block;
+    color:#aaa;
+    font-size:13px;
+    margin-bottom:7px;
 }
 
 input,
-textarea {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 17px;
-    border-radius: 12px;
-    border: 1px solid #333;
-    background: #1a1a1a;
-    color: white;
-    font-size: 15px;
-    outline: none;
+textarea{
+    width:100%;
+    border:1px solid #333;
+    background:#191919;
+    color:#fff;
+    border-radius:12px;
+    padding:14px;
+    margin-bottom:17px;
+    font-size:15px;
+    outline:none;
 }
 
 input:focus,
-textarea:focus {
-    border-color: #d8b35a;
+textarea:focus{
+    border-color:#d9b65c;
 }
 
-textarea {
-    height: 80px;
-    resize: none;
+textarea{
+    height:80px;
+    resize:none;
 }
 
-button {
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 13px;
-    background: linear-gradient(135deg,#e5c96f,#a97a27);
-    color: #080808;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+button{
+    width:100%;
+    border:0;
+    border-radius:13px;
+    padding:16px;
+    background:linear-gradient(135deg,#efd477,#a87525);
+    color:#080808;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
 }
 
-button:active {
-    transform: scale(.98);
+button:active{
+    transform:scale(.98);
 }
 
-.info {
-    text-align: center;
-    color: #777;
-    font-size: 11px;
-    line-height: 1.5;
-    margin-top: 18px;
+.whatsapp{
+    display:block;
+    text-align:center;
+    margin-top:18px;
+    color:#3dde8b;
+    font-size:13px;
 }
 
-.direct {
-    display: block;
-    text-align: center;
-    color: #40df8c;
-    margin-top: 18px;
-    font-size: 13px;
+.info{
+    text-align:center;
+    color:#777;
+    font-size:11px;
+    line-height:1.6;
+    margin-top:20px;
 }
 
-.footer {
-    text-align: center;
-    color: #555;
-    font-size: 11px;
-    margin-top: 30px;
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:11px;
+    padding:30px 0;
+}
+
+.success{
+    display:none;
+    margin-top:15px;
+    padding:14px;
+    border-radius:12px;
+    background:#102319;
+    border:1px solid #245d3c;
+    color:#8ff0b5;
+    text-align:center;
+    font-size:13px;
 }
 </style>
 </head>
@@ -131,10 +158,20 @@ button:active {
 
 <div class="container">
 
-    <div class="logo">
+    <div class="header">
+
+        <div class="logo">
+            MG
+        </div>
+
         <h1>MARDİN GECE ŞOFÖRÜ</h1>
-        <p>Güvenli dönüşünüz için yanınızdayız.</p>
+
+        <p>
+            Güvenli dönüşünüz için yanınızdayız.
+        </p>
+
     </div>
+
 
     <div class="card">
 
@@ -142,23 +179,18 @@ button:active {
 
         <form id="randevuForm">
 
-            <label>Ad</label>
+            <label>Ad Soyad</label>
+
             <input
                 type="text"
-                id="ad"
-                placeholder="Adınız"
+                id="adsoyad"
+                placeholder="Adınız ve soyadınız"
                 required
             >
 
-            <label>Soyad</label>
-            <input
-                type="text"
-                id="soyad"
-                placeholder="Soyadınız"
-                required
-            >
 
             <label>Telefon</label>
+
             <input
                 type="tel"
                 id="telefon"
@@ -166,65 +198,91 @@ button:active {
                 required
             >
 
-            <label>Nereden alınacaksınız?</label>
+
+            <label>Alınacak Konum</label>
+
             <input
                 type="text"
                 id="konum"
-                placeholder="Alınacak konum"
+                placeholder="Nereden alınacaksınız?"
                 required
             >
 
-            <label>Nereye gideceksiniz?</label>
+
+            <label>Gidilecek Adres</label>
+
             <input
                 type="text"
                 id="adres"
-                placeholder="Gidilecek adres"
+                placeholder="Nereye gideceksiniz?"
                 required
             >
 
+
             <label>Tarih</label>
+
             <input
                 type="date"
                 id="tarih"
                 required
             >
 
+
             <label>Saat</label>
+
             <input
                 type="time"
                 id="saat"
                 required
             >
 
-            <label>Ek bilgi</label>
+
+            <label>Ek Bilgi</label>
+
             <textarea
                 id="not"
-                placeholder="Varsa eklemek istediğiniz bilgi">
+                placeholder="Varsa belirtmek istediğiniz bilgi">
             </textarea>
 
+
             <button type="submit">
-                RANDEVU GÖNDER
+                🚘 RANDEVU GÖNDER
             </button>
 
         </form>
 
-        <div class="info">
-            Randevu bilgileriniz WhatsApp üzerinden
-            Mardin Gece Şoförü'ne iletilir.
+
+        <div
+            id="success"
+            class="success">
+            Randevu bilgileri hazırlanıyor...
         </div>
 
+
+        <div class="info">
+            Randevu talebiniz WhatsApp üzerinden
+            işletmeye iletilir.
+            <br>
+            Ödeme alınmaz.
+        </div>
+
+
         <a
-            class="direct"
+            class="whatsapp"
             href="https://wa.me/905054727010"
-            target="_blank"
-        >
+            target="_blank">
+
             WhatsApp'tan direkt ulaş
+
         </a>
 
     </div>
 
+
     <div class="footer">
+
         © 2026 Mardin Gece Şoförü
+
     </div>
 
 </div>
@@ -234,15 +292,13 @@ button:active {
 
 document
 .getElementById("randevuForm")
-.addEventListener("submit", function(event) {
+.addEventListener("submit", function(e){
 
-    event.preventDefault();
+    e.preventDefault();
 
-    const ad =
-        document.getElementById("ad").value;
 
-    const soyad =
-        document.getElementById("soyad").value;
+    const adsoyad =
+        document.getElementById("adsoyad").value;
 
     const telefon =
         document.getElementById("telefon").value;
@@ -262,20 +318,21 @@ document
     const not =
         document.getElementById("not").value.trim();
 
+
     const mesaj =
 
-`🚘 YENİ RANDEVU
+`🚘 YENİ RANDEVU TALEBİ
 
-👤 Müşteri:
-${ad} ${soyad}
+👤 Ad Soyad:
+${adsoyad}
 
 📱 Telefon:
 ${telefon}
 
-📍 Alınacak yer:
+📍 Alınacak Konum:
 ${konum}
 
-🏁 Gidilecek yer:
+🏁 Gidilecek Adres:
 ${adres}
 
 📅 Tarih:
@@ -284,16 +341,26 @@ ${tarih}
 ⏰ Saat:
 ${saat}
 
-📝 Ek bilgi:
-${not || "Yok"}
+📝 Ek Bilgi:
+${not || "Belirtilmedi"}
 
-Mardin Gece Şoförü`;
+━━━━━━━━━━━━━━
+MARDİN GECE ŞOFÖRÜ`;
+
+
+    document.getElementById("success").style.display="block";
+
 
     const whatsapp =
         "https://wa.me/905054727010?text="
         + encodeURIComponent(mesaj);
 
-    window.location.href = whatsapp;
+
+    setTimeout(function(){
+
+        window.location.href = whatsapp;
+
+    },500);
 
 });
 
