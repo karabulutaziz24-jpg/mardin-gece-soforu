@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mardin Gece Şoförü</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+background:#050505;color:#fff;font-family:Arial,sans-serif;
+overflow-x:hidden
+}
+:root{--g:#d4af37;--lg:#f5dc80}
+
+nav{
+height:72px;padding:0 6%;display:flex;align-items:center;
+justify-content:space-between;position:sticky;top:0;z-index:10;
+background:#050505ee;border-bottom:1px solid #d4af3740;
+backdrop-filter:blur(15px)
+}
+.logo{color:var(--lg);font-weight:bold;letter-spacing:2px}
+button,.btn{
+border:1px solid var(--g);
+background:linear-gradient(135deg,#f0d16b,#98721d);
+color:#050505;padding:14px 20px;border-radius:11px;
+font-weight:bold;cursor:pointer;text-decoration:none
+}
+
+.hero{
+min-height:700px;padding:70px 7%;
+display:grid;grid-template-columns:1.1fr .9fr;
+align-items:center;gap:30px;
+background:
+radial-gradient(circle at 75% 45%,#d4af3720,transparent 30%),
+linear-gradient(#080808,#020202);
+position:relative
+}
+.hero h1{
+font-size:clamp(44px,6vw,78px);line-height:1.02;
+margin:25px 0;background:linear-gradient(120deg,#fff,#f5dc80,#a77b1d);
+-webkit-background-clip:text;color:transparent
+}
+.hero h1 span{color:var(--g)}
+.hero p{max-width:620px;color:#aaa;font-size:18px;line-height:1.7;margin-bottom:28px}
+.badge{
+display:inline-block;border:1px solid #d4af3760;
+padding:10px 15px;border-radius:50px;color:var(--lg);
+font-size:11px;letter-spacing:1px
+}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.outline{background:#111;color:#fff}
+.whatsapp{color:#fff;background:#151515}
+
+.visual{height:460px;display:grid;place-items:center;position:relative}
+.car{
+width:370px;height:260px;border:1px solid #d4af3760;
+border-radius:25px;background:linear-gradient(145deg,#1b1b1b,#080808);
+box-shadow:0 30px 90px #000,0 0 45px #d4af3720;
+transform:perspective(800px) rotateY(-10deg);
+display:flex;flex-direction:column;justify-content:space-between;
+padding:20px;animation:move 4s ease-in-out infinite alternate
+}
+@keyframes move{to{transform:perspective(800px) rotateY(10deg) translateY(-10px)}}
+.car-icon{text-align:center;font-size:105px}
+.car small{color:#999}
+.float{
+position:absolute;background:#111d;border:1px solid #d4af3760;
+padding:15px;border-radius:15px;color:var(--lg);
+backdrop-filter:blur(10px)
+}
+.f1{top:45px;right:0}.f2{bottom:50px;left:0}
+
+section.content{max-width:1100px;margin:auto;padding:70px 20px}
+h2{font-size:34px;margin-bottom:25px}
+.grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px
+}
+.card{
+padding:25px;border-radius:20px;background:linear-gradient(145deg,#151515,#090909);
+border:1px solid #d4af3728;transition:.3s
+}
+.card:hover{transform:translateY(-6px);border-color:#d4af3780}
+.icon{font-size:32px;margin-bottom:12px}
+.card h3{margin-bottom:10px}
+.card p{color:#999;line-height:1.6}
+
+.modal{
+display:none;position:fixed;inset:0;background:#000d;
+z-index:100;place-items:center;padding:20px
+}
+.box{
+width:100%;max-width:430px;background:#101010;
+border:1px solid #d4af3760;border-radius:22px;padding:25px
+}
+.box h2{color:var(--lg)}
+input{
+width:100%;padding:14px;margin:7px 0 15px;
+background:#080808;color:#fff;border:1px solid #333;border-radius:10px
+}
+label{font-size:13px;color:#aaa}
+.close{float:right;background:none;border:0;color:#fff;font-size:25px}
+
+#panel{display:none}
+.map{
+height:320px;border-radius:20px;border:1px solid #d4af3750;
+background:
+linear-gradient(#d4af3715 1px,transparent 1px),
+linear-gradient(90deg,#d4af3715 1px,transparent 1px);
+background-size:45px 45px;position:relative;overflow:hidden
+}
+.pin{
+position:absolute;left:60%;top:42%;font-size:35px;
+animation:pulse 1.5s infinite
+}
+@keyframes pulse{50%{transform:scale(1.3)}}
+.route{
+position:absolute;width:50%;height:2px;background:var(--g);
+left:25%;top:55%;transform:rotate(-18deg);
+box-shadow:0 0 15px var(--g)
+}
+.cert{
+border:1px solid var(--g);
+background:linear-gradient(135deg,#191919,#080808)
+}
+footer{text-align:center;padding:40px;color:#777;border-top:1px solid #222}
+
+@media(max-width:800px){
+.hero{grid-template-columns:1fr;text-align:center;padding:60px 18px}
+.hero p{margin-left:auto;margin-right:auto}
+.actions{justify-content:center}
+.visual{height:380px}
+.car{width:320px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">MARDİN GECE ŞOFÖRÜ</div>
+<button onclick="openLogin()">ÜYE GİRİŞİ</button>
+</nav>
+
+<div id="home">
+
+<section class="hero">
+
+<div>
+<div class="badge">✦ PREMIUM • GÜVENLİ • ONAYLI ÖZEL ŞOFÖR</div>
+
+<h1>
+Aracınız Size,<br>
+<span>Güvenli Yolculuk</span> Bize Emanet.
+</h1>
+
+<p>
+Gece boyunca aracınızı güvenle kullanmanız için
+profesyonel, onaylı ve özenli özel şoför hizmeti.
+</p>
+
+<div class="actions">
+
+<button onclick="openLogin()">
+✦ Hemen Randevu Oluştur
+</button>
+
+<a class="btn outline" href="#services">
+Hizmeti Keşfet →
+</a>
+
+<a class="btn whatsapp"
+href="https://wa.me/905054727010?text=Merhaba%20Mardin%20Gece%20Şoförü%2C%20özel%20şoför%20hizmeti%20almak%20istiyorum."
+target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
+</div>
+
+<div class="visual">
+
+<div class="car">
+
+<div style="color:#d4af37;font-size:11px;letter-spacing:2px">
+VIP ÖZEL ŞOFÖR
+</div>
+
+<div class="car-icon">🚘</div>
+
+<div>
+<strong>Gecenin konforu.</strong><br>
+<small>Profesyonel sürüş • Mardin</small>
+</div>
+
+</div>
+
+<div class="float f1">🏆<br>ONAYLI ÖZEL ŞOFÖR</div>
+<div class="float f2">📍<br>CANLI KONUM TAKİBİ</div>
+
+</div>
+
+</section>
+
+<section class="content" id="services">
+
+<h2>Premium Hizmet</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📍</div>
+<h3>Canlı Konum</h3>
+<p>Şoförünüzün size yaklaşmasını harita üzerinden takip edin.</p>
+</div>
+
+<div class="card">
+<div class="icon">🚘</div>
+<h3>Araç Bilgileri</h3>
+<p>Şoför adı, araç modeli, renk ve plaka bilgilerini görüntüleyin.</p>
+</div>
+
+<div class="card">
+<div class="icon">🔑</div>
+<h3>Anahtar Durumu</h3>
+<p>Anahtarın kimde olduğunu ve teslim durumunu takip edin.</p>
+</div>
+
+<div class="card">
+<div class="icon">🏆</div>
+<h3>Onaylı Özel Şoför</h3>
+<p>Sertifika ve doğrulama bilgilerini görüntüleyin.</p>
+</div>
+
+</div>
+</section>
+
+<section class="content">
+
+<h2>Nasıl Çalışır?</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3 class="gold">01 — Üye Ol</h3>
+<p>E-posta, kullanıcı adı ve doğum tarihinizle hesap oluşturun.</p>
+</div>
+
+<div class="card">
+<h3>02 — Konumunu Belirt</h3>
+<p>Alınacağınız noktayı ve varış adresini belirleyin.</p>
+</div>
+
+<div class="card">
+<h3>03 — Şoförünü Takip Et</h3>
+<p>Şoförünüzün konumunu ve araç bilgilerini görüntüleyin.</p>
+</div>
+
+</div>
+</section>
+
+</div>
+
+<!-- MÜŞTERİ PANELİ -->
+
+<section class="content" id="panel">
+
+<div style="display:flex;justify-content:space-between;align-items:center">
+
+<div>
+<div class="badge">MÜŞTERİ PANELİ</div>
+<h2 id="welcome">Hoş geldin</h2>
+</div>
+
+<button onclick="logout()">Çıkış</button>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">👤</div>
+<h3 id="profile">Profil</h3>
+<p id="info"></p>
+</div>
+
+<div class="card">
+<div class="icon">🚘</div>
+<h3>Atanan Şoför</h3>
+<p>Aziz Karabulut</p>
+<p>VIP Özel Şoför</p>
+<p>Plaka: 34 ABC 123</p>
+</div>
+
+</div>
+
+<h2 style="margin-top:40px">📍 Canlı Yaklaşım</h2>
+
+<div class="map">
+
+<div class="route"></div>
+
+<div class="pin">📍</div>
+
+<div style="
+position:absolute;bottom:15px;left:15px;
+background:#080808dd;padding:14px;border-radius:12px">
+
+Şoförünüz size yaklaşıyor<br>
+<span style="color:#d4af37">Tahmini: 8 dakika</span>
+
+</div>
+
+</div>
+
+<div class="grid" style="margin-top:20px">
+
+<div class="card">
+<h3>📅 Randevu</h3>
+<p>Durum: YOLDA</p>
+<p>Alınış: Seçilen Konum</p>
+<p>Varış: Belirtilmedi</p>
+</div>
+
+<div class="card">
+<h3>🔑 Anahtar</h3>
+<p>Anahtar durumu:</p>
+<strong style="color:#d4af37">Şoförde</strong>
+</div>
+
+<div class="card cert">
+<h3 style="color:#f5dc80">🏆 ONAYLI ÖZEL ŞOFÖR</h3>
+<p>Doğrulanmış profesyonel sürücü</p>
+<br>
+<p>Sertifika No: MGS-2026-001</p>
+<p>✓ Doğrulandı</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Mardin Gece Şoförü
+</footer>
+
+<!-- ÜYELİK -->
+
+<div class="modal" id="modal">
+
+<div class="box">
+
+<button class="close" onclick="closeLogin()">×</button>
+
+<h2>Üye Ol</h2>
+
+<label>Ad Soyad</label>
+<input id="name" placeholder="Ad Soyad">
+
+<label>E-posta</label>
+<input id="email" type="email" placeholder="ornek@mail.com">
+
+<label>Kullanıcı Adı</label>
+<input id="username" placeholder="kullaniciadi">
+
+<label>Doğum Tarihi</label>
+<input id="birth" type="date">
+
+<p id="age" style="color:#d4af37;margin-bottom:15px">
+Yaşınız otomatik hesaplanır.
+</p>
+
+<button style="width:100%" onclick="register()">
+Hesap Oluştur
+</button>
+
+</div>
+</div>
+
+<script>
+
+function openLogin(){
+document.getElementById("modal").style.display="grid";
+}
+
+function closeLogin(){
+document.getElementById("modal").style.display="none";
+}
+
+document.getElementById("birth").addEventListener("change",function(){
+
+let d=new Date(this.value);
+let n=new Date();
+
+let age=n.getFullYear()-d.getFullYear();
+
+if(
+new Date(
+n.getFullYear(),
+d.getMonth(),
+d.getDate()
+)>n
+) age--;
+
+document.getElementById("age").innerText="Yaş: "+age;
+
+});
+
+function register(){
+
+let name=document.getElementById("name").value.trim();
+let email=document.getElementById("email").value.trim();
+let username=document.getElementById("username").value.trim();
+let birth=document.getElementById("birth").value;
+
+if(!name||!email||!username||!birth){
+
+alert("Lütfen tüm alanları doldurun.");
+return;
+
+}
+
+let d=new Date(birth);
+let n=new Date();
+
+let age=n.getFullYear()-d.getFullYear();
+
+if(
+new Date(
+n.getFullYear(),
+d.getMonth(),
+d.getDate()
+)>n
+) age--;
+
+if(age<18){
+
+alert("Üyelik için 18 yaşından büyük olmalısınız.");
+return;
+
+}
+
+let user={
+name:name,
+email:email,
+username:username,
+birth:birth,
+age:age
+};
+
+localStorage.setItem(
+"mardin_user",
+JSON.stringify(user)
+);
+
+showPanel(user);
+closeLogin();
+
+}
+
+function showPanel(user){
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("panel").style.display="block";
+
+document.getElementById("welcome").innerText=
+"Hoş geldin, "+user.name.split(" ")[0];
+
+document.getElementById("profile").innerText=
+user.name;
+
+document.getElementById("info").innerText=
+user.email+" • @"+user.username+" • "+user.age+" yaş";
+
+window.scrollTo(0,0);
+
+}
+
+function logout(){
+
+localStorage.removeItem("mardin_user");
+
+location.reload();
+
+}
+
+let saved=localStorage.getItem("mardin_user");
+
+if(saved){
+
+showPanel(JSON.parse(saved));
+
+}
+
+</script>
+
+</body>
+</html>
